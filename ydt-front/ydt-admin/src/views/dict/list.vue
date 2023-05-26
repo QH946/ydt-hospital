@@ -17,9 +17,10 @@
       <el-form label-position="right" label-width="170px">
         <el-form-item label="文件">
           <el-upload
-            :multiple="false"
+            multiple
             :on-success="onUploadSuccess"
-            :action="'http://localhost:8202/admin/cmn/dict/uploadDict'"
+            :file-list="fileList"
+            :action="'http://localhost:80/admin/cmn/dict/uploadDict'"
             class="upload-demo"
           >
             <el-button size="small" type="primary">点击上传</el-button>
@@ -82,6 +83,7 @@ import dictApi from "@/api/dict";
 export default {
   data() {
     return {
+      fileList:[],
       dictList: [], //数据字典数据
       dialogImportVisible: false,
     };
@@ -107,7 +109,7 @@ export default {
 
     //导出数据字典数据
     exportData() {
-      window.location.href = "http://localhost:8202/admin/cmn/dict/exportDict";
+      window.location.href = "http://localhost:80/admin/cmn/dict/exportDict";
     },
 
     //获取数据字典数据

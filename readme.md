@@ -7,3 +7,7 @@
 ## tips
 为方便统一管理，Mysql、Redis、Mongo等数据库密码都设置为root
 且为后续修改方便，建议都使用挂载目录的方式启动容器
+ctrl+alt+<- 自动调转调用位置
+
+## 后续重构
+Result、ResultCodeEnum等放在统一模块中

@@ -1,20 +1,42 @@
-#server:
-#  port: 8201  # 服务端口
-#
-#spring:
-#  application:
-#    name: service-hosp   # 服务名
-#  profiles: # 环境设置：dev、test、prod
-#    active: dev
-#  datasource: # mysql数据库连接
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://192.168.174.131:3306/yygh_hosp?characterEncoding=utf-8&useSSL=false
-#    username: root
-#    password: root
-#  jackson: #返回json的全局时间格式
-#    date-format: yyyy-MM-dd HH:mm:ss
-#    time-zone: GMT+8
-#
-#mybatis-plus: #mybatisplus日志
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8201  # 服务端口
+
+spring:
+  application:
+    name: service-hosp   # 服务名
+  profiles: # 环境设置：dev、test、prod
+    active: dev
+  datasource: # mysql数据库连接
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.174.131:3306/yygh_hosp?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+
+  jackson: #返回json的全局时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.174.131:8848
+
+  data:
+    mongodb:
+      uri: mongodb://192.168.174.131:27017/yygh_hosp
+
+  redis:
+    host: 192.168.174.131
+    port: 6379
+    database: 0
+    timeout: 3000000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+
+logging:
+  level:
+    com.qh.ydt: debug

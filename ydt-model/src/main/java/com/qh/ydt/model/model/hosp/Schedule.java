@@ -17,7 +17,7 @@ import java.util.Date;
  * Schedule
  * </p>
  *
- * @author qy
+ * @author 清欢
  */
 @Data
 @ApiModel(description = "Schedule")

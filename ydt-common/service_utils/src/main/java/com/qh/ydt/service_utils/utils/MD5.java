@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 
 /**
- * md5
+ * md5加密
  *
  * @author 清欢
  * @date 2023/05/23  17:49:45

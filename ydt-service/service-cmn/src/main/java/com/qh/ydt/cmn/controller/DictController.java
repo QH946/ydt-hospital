@@ -64,9 +64,8 @@ public class DictController {
      */
     @ApiOperation(value = "上传数据字典")
     @PostMapping("/uploadDict")
-    public Result uploadDict(MultipartFile file) {
+    public void uploadDict(MultipartFile file) {
         dictService.uploadData(file);
-        return Result.ok();
     }
 
     /**

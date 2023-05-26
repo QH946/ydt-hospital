@@ -13,6 +13,7 @@
         <module>ydt-client</module>
         <module>ydt-gateway</module>
         <module>ydt-common</module>
+        <module>hospital-manage</module>
     </modules>
 
     <parent>

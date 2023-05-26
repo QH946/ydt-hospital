@@ -89,7 +89,7 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements Di
     @Override
     public void uploadData(MultipartFile file) {
         try {
-            EasyExcel.read(file.getInputStream(),DictEeVo.class,dictListener).sheet().doRead();
+            EasyExcel.read(file.getInputStream(), DictEeVo.class, dictListener).sheet().doRead();
         } catch (IOException e) {
             e.printStackTrace();
         }
